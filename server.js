@@ -60,7 +60,7 @@ app.patch("/app/update/user/:id", (req, res) => {
 app.delete("/app/delete/user/:id", (req, res) => {
     const stmt = db.prepare("DELETE FROM userinfo WHERE id = ?");
     const info = stmt.run(req.params.id)
-    res.status(200).send({ message: info.changes + " record deleted: ID " + info.lastInsertRowid + " (200)" });
+    res.status(200).send({ message: info.changes + " record deleted: ID " + req.params.id + " (200)" });
 });
 // Default response for any other request
 app.use(function(req, res) {
