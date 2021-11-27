@@ -43,7 +43,7 @@ app.get("/app/user/:id", (req, res) => {
     //const pass = stmt.get(req.body.pass);
     //pass = md5(pass);
     var object = {
-        id: req.params.id,
+        id: parseInt(req.params.id),
         user: info["user"],
         pass: info["pass"],
     }
